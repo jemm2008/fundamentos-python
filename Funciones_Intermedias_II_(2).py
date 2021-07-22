@@ -1,4 +1,4 @@
-##EJERCICIO_01: Actualiza los valores en diccionarios y listas
+print("EJERCICIO_01: Actualiza los valores en diccionarios y listas")
 x = [ [5,2,3], [10,8,9] ] 
 students = [
      {'first_name':  'Michael', 'last_name' : 'Jordan'},
@@ -63,3 +63,73 @@ for i in range (0, len(z)):
                 #print (z[i])
 #print("Saliendo")
 print(f"El nuevo z con el valor modificado es: {z}.\n")
+#
+print("#"*111, "\n")
+#
+print("EJERCICIO_02: Itera a travEs de una lista de diccionarios\n")
+# Crea una función iterateDictionary(some_list)que, dada una lista de diccionarios,
+# la función recorra cada diccionario de la lista e imprime cada clave y el valor asociado.
+students = [
+        {'first_name':  'Michael', 'last_name' : 'Jordan'},
+        {'first_name' : 'John', 'last_name' : 'Rosales'},
+        {'first_name' : 'Mark', 'last_name' : 'Guillen'},
+        {'first_name' : 'KB', 'last_name' : 'Tonel'}
+]
+#
+def iteratedictionary(list_to_work2):
+    for i in range (0, len(list_to_work2)):
+        #print (z[i])
+        temp2 = list(list_to_work2[i].items())
+        #print (temp)
+        for m in range (0, len(temp2)):
+            #print (temp[m])
+            for k in range (0, len(temp2[m])):
+                #print (temp[m][k])
+                print(f"{temp2[m][k]} - {temp2[m][k+1]}, {temp2[m+1][k]} - {temp2[m+1][k+1]}")
+                break
+            break
+#
+iteratedictionary(students)
+#
+print("#"*111, "\n")
+#
+print("EJERCICIO_03: ObtEn valores de una lista de diccionarios\n")
+# Crea una función iteratedictionary2(key_name, some_list) que, dada una lista de diccionarios y un nombre de clave,
+# la función imprima el valor almacenado en esa clave para cada diccionario.
+#
+def iteratedictionary2(key_name_3, list_to_work3):
+    for i in range (0, len(list_to_work3)):
+        temp3 = list(list_to_work3[i].items())
+        #print (temp)
+        for m in range (0, len(temp3)):
+            #print (temp3[m])
+            for k in range (0, len(temp3[m])):
+                #print (temp3[m][k])
+                if temp3[m][k] == key_name_3:
+                    print(temp3[m][k+1])
+                    break
+#
+iteratedictionary2('first_name', students)
+print("\n")
+iteratedictionary2('last_name', students)
+#
+print("#"*111, "\n")
+#
+print("EJERCICIO_04: Itera a travEs de un diccionario con valores de listas")
+# Crea una función printInfo(some_dict) que, dado un diccionario cuyos valores son todas listas,
+# imprima el nombre de cada clave junto con el tamaño de su lista, y luego imprima los valores asociados
+# dentro de la lista de cada clave.
+#
+dojo = {
+   'LOCATIONS': ['San Jose', 'Seattle', 'Dallas', 'Chicago', 'Tulsa', 'DC', 'Burbank'],
+   'INSTRUCTORS': ['Michael', 'Amy', 'Eduardo', 'Josh', 'Graham', 'Patrick', 'Minh', 'Devon']
+}
+#
+def printinfo(some_dict_4):
+    for clave, valores in some_dict_4.items():
+        print(f"{len(valores)}  {clave}")
+        for valor in valores:
+            print(valor)
+        print("\n")
+#
+printinfo(dojo)
